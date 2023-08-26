@@ -33,7 +33,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main nixos configuration file <
-        modules = [ ./nixos/configuration.nix ];
+        modules = [ ./configuration.nix ];
       };
     };
 
@@ -44,7 +44,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
         # > Our main home-manager configuration file <
-        modules = [ ./home/home.nix ];
+        modules = [ ./home.nix ];
       };
     };
   };
