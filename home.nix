@@ -61,6 +61,7 @@
     htop
     gnumake
     zlib 
+    graphviz
 
     # Applications
     feh
