@@ -54,10 +54,8 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    zlib
-    # gcc
-  ];
+  # Packages
+  environment.systemPackages = with pkgs; [];
 
   services.xserver = {
     enable = true;
