@@ -60,7 +60,6 @@
     magic-wormhole
     htop
     gnumake
-    zlib 
     graphviz
 
     # Applications
@@ -77,7 +76,6 @@
 
     # LLVM
     (llvmPackages_15.libllvm.override{debugVersion = true;})
-    pkg-config
     llvmPackages_15.clangUseLLVM
     lldb_15
     
