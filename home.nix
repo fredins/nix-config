@@ -74,6 +74,7 @@
     mpv
     qbittorrent
     inotify-tools
+    keepassxc
 
     # LLVM
     (llvmPackages_15.libllvm.override{debugVersion = true;})
