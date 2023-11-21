@@ -43,6 +43,7 @@
     courier-prime
     julia-mono
     lmodern
+    mononoki
 
     # System and utilities
     lxqt.lxqt-themes

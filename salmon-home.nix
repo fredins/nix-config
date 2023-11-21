@@ -41,6 +41,10 @@
     # Fonts
     lmodern
 
+    # Applications and tools
+    inotify-tools
+    keepassxc
+
     # Haskell and Agda
     ghc
     haskell-language-server
@@ -54,6 +58,8 @@
     # Other
     ltex-ls
     texlive.combined.scheme-full
+
+    nodePackages.grammarly-languageserver
   ];
 
   # programs.neovim.enable = true;
