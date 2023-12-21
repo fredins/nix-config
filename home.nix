@@ -61,6 +61,7 @@
     htop
     gnumake
     graphviz
+    inotify-tools
 
     # Applications
     feh
