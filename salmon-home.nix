@@ -16,6 +16,7 @@
     # You can add overlays here
     overlays = [
       inputs.cornelis.overlays.cornelis
+      inputs.nixgl.overlay
       # If you want to use overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
@@ -40,6 +41,7 @@
   home.packages = with pkgs; [
     # Fonts
     lmodern
+    mononoki
 
     # Applications and tools
     inotify-tools
@@ -52,14 +54,19 @@
     haskellPackages.cabal-install
     haskellPackages.stylish-haskell
     haskellPackages.hoogle
-    (agda.withPackages [ agdaPackages.standard-library ])
+    haskellPackages.threadscope
+    haskellPackages.BNFC
+    haskellPackages.alex
+    haskellPackages.happy
     cornelis
 
     # Other
     ltex-ls
     texlive.combined.scheme-full
+    nixgl.nixGLIntel
+    # nixgl.nixGLNvidia attribute missing
 
-    nodePackages.grammarly-languageserver
+  
   ];
 
   # programs.neovim.enable = true;
