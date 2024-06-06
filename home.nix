@@ -38,6 +38,10 @@
   home.username = "fm";
   home.homeDirectory = "/home/fm";
   home.packages = with pkgs; [
+    # Python
+    (python3.withPackages (ps: with ps; [ numpy matplotlib pandas notebook scikit-learn]))
+
+
     # Fonts
     powerline-fonts
     courier-prime
@@ -64,6 +68,7 @@
     inotify-tools
 
     # Applications
+    fastfetch
     feh
     qpwgraph
     firefox
@@ -76,7 +81,7 @@
     qbittorrent
 
     # LLVM
-    (llvmPackages_15.libllvm.override{debugVersion = true;})
+    # (llvmPackages_15.libllvm.override{debugVersion = true;})
     llvmPackages_15.clangUseLLVM
     lldb_15
     
@@ -87,7 +92,7 @@
     haskellPackages.cabal-install
     haskellPackages.stylish-haskell
     haskellPackages.hoogle
-    (agda.withPackages [ agdaPackages.standard-library ])
+    # (agda.withPackages [ agdaPackages.standard-library ])
     cornelis
 
     # Other
