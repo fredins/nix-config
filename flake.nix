@@ -47,6 +47,15 @@
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
+    homeConfigurations = {
+      "marfre03@e114112" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+        extraSpecialArgs = { inherit inputs; }; 
+        modules = [ ./home-e114112.nix ];
+      };
+    };
+
+
     # homeConfigurations = {
     #   "fm@herring" = home-manager.lib.homeManagerConfiguration {
     #     pkgs = nixpkgs.legacyPackages.x86_64-linux; 

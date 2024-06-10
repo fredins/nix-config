@@ -26,7 +26,7 @@
       vim.opt.undofile    = true
       vim.opt.signcolumn  = 'yes'
       vim.opt.updatetime  = 250
-      vim.opt.colorcolumn = '100'
+      -- vim.opt.colorcolumn = '100'
       vim.opt.wrap        = false
     '';
     plugins = with pkgs.vimPlugins; [
