@@ -31,21 +31,28 @@
     nixosConfigurations = {
       herring = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; }; # Pass flake inputs to our config
-        # > Our main nixos configuration file <
-        modules = [ ./configuration.nix ];
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          ./configuration.nix 
+          home-manager.nixosModules.home-manager
+          {
+            nixpkgs.overlays = [ cornelis.overlays.cornelis ];
+            # home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.fm = import ./home-herring.nix;
+          }
+        ];
       };
     };
 
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "fm@herring" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = { inherit inputs; }; # Pass flake inputs to our config
-        # > Our main home-manager configuration file <
-        modules = [ ./home.nix ];
-      };
-    };
+    # homeConfigurations = {
+    #   "fm@herring" = home-manager.lib.homeManagerConfiguration {
+    #     pkgs = nixpkgs.legacyPackages.x86_64-linux; 
+    #     extraSpecialArgs = { inherit inputs; }; 
+    #     modules = [ ./home-herring.nix ];
+    #   };
+    # };
   };
 }

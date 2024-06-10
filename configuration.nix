@@ -61,14 +61,13 @@
     enable = true;
     videoDrivers = [ "modesetting" ];
     desktopManager.lxqt.enable = true;
-    displayManager = {
+    xkb.layout = "se";
+  };
+
+  services.displayManager = {
       sddm = {
         enable = true;
 	      theme = "maldives";
-        #setupScript = 
-	      #''
-	      #feh --bg-scale /home/fm/Pictures/001.jpg
-        #'';
       };
       defaultSession = "lxqt";
       autoLogin = {
@@ -76,9 +75,7 @@
 	      user = "fm";
       };
     };  
-  };
 
-  services.xserver.layout = "se";
 
   services.unclutter-xfixes = {
     enable = true;
