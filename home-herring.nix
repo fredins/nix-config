@@ -4,7 +4,7 @@
   imports = [
     ./nvim
     ./alacritty 
-    ./xmonad
+    # ./xmonad
   ];
 
   nixpkgs = {
