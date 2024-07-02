@@ -10,6 +10,7 @@
       xclip
       ripgrep
       fd
+      (agda.withPackages [ agdaPackages.standard-library ])
       cornelis 
       haskellPackages.haskell-language-server
       clang-tools
