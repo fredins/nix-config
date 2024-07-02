@@ -23,7 +23,18 @@
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "22.05";
   
-    packages = with pkgs; [ ];
+    packages = with pkgs; [ 
+      ghc 
+      haskellPackages.hoogle
+      haskellPackages.fix-whitespace
+      ripgrep
+      fd
+      cmake
+      clang-tools
+      # llvmPackages_15.libstdcxxClang
+      llvmPackages.libllvm
+      llvmPackages.clangUseLLVM
+    ];
   };
 
   programs.command-not-found.enable = true;

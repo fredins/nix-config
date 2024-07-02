@@ -12,6 +12,8 @@
       fd
       cornelis 
       haskellPackages.haskell-language-server
+      clang-tools
+      pyright
     ];
     extraLuaConfig = '' 
       vim.g.mapleader     = " "
@@ -84,6 +86,16 @@
           require("lspconfig")["hls"].setup {
             capabilities = capabilities
           }
+
+          require("lspconfig")["pyright"].setup {
+            capabilities = capabilities
+          }
+
+          require("lspconfig")["clangd"].setup {
+            capabilities = capabilities,
+            autostart = false
+          }
+
         ''; 
       }
       {
@@ -190,7 +202,8 @@
           vim.g.haskell_ident_disable           = 1
         '';
       }
-      (nvim-treesitter.withPlugins (p: with p; [ lua c cpp ]))
+      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp ]))
+      vim-smoothie
     ];
   };
 }
