@@ -83,6 +83,9 @@
             matching = { disallow_symbol_nonprefix_matching = false }
           })
 
+
+          vim.keymap.set("n", "<C-y>", vim.diagnostic.open_float)
+
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
           require("lspconfig")["hls"].setup {
             capabilities = capabilities

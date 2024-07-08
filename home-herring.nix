@@ -4,7 +4,7 @@
   imports = [
     ./nvim
     ./alacritty 
-    # ./xmonad
+    ./xmonad
   ];
 
   nixpkgs = {
@@ -83,6 +83,10 @@
       texlive.combined.scheme-full
     ];
   };
+
+
+  # xsession.windowManager.xmonad.enable = true;
+
 
   programs.command-not-found.enable = true;
   programs.home-manager.enable = true;
