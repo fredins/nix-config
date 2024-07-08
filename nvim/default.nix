@@ -14,6 +14,9 @@
       cornelis 
       haskellPackages.haskell-language-server
       clang-tools
+      # llvmPackages_15.libstdcxxClang
+      llvmPackages.libllvm
+      llvmPackages.clangUseLLVM
       pyright
     ];
     extraLuaConfig = '' 

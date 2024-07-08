@@ -26,14 +26,7 @@
     packages = with pkgs; [ 
       ghc 
       haskellPackages.hoogle
-      haskellPackages.fix-whitespace
-      ripgrep
-      fd
       cmake
-      clang-tools
-      # llvmPackages_15.libstdcxxClang
-      llvmPackages.libllvm
-      llvmPackages.clangUseLLVM
     ];
   };
 
