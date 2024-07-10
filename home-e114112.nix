@@ -27,6 +27,7 @@
       ghc 
       haskellPackages.hoogle
       cmake
+      ncdu
     ];
   };
 
