@@ -209,7 +209,7 @@
           vim.g.haskell_ident_disable           = 1
         '';
       }
-      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp ]))
+      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl ]))
       vim-smoothie
     ];
   };
