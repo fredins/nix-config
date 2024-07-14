@@ -10,16 +10,13 @@
       imports = [ inputs.haskell-flake.flakeModule ];
 
       perSystem = { self', pkgs, ... }: {
+
         haskellProjects.default = {
-          devShell = {
-            enable = true;
-            tools = hp: { 
-              # xmonad = hp.containers;
-              # xmonad = hp.xmonad-contrib;
-              # xmonad = hp.xmonad;
-            };
-          };
+          packages = {};
+          settings = {};
+          devShell = {};
         };
+
         packages.default = self'.packages.xmonad-config;
       };
     };
