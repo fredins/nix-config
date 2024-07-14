@@ -27,11 +27,6 @@
     homeDirectory = "/home/marfre03";
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "22.05";
-    sessionVariables = {
-      EDITOR = "nvim";
-      TERMINAL = "kitty";
-    };
-  
     packages = with pkgs; [ 
       ghc 
       haskellPackages.hoogle
@@ -46,7 +41,7 @@
 
   programs.bash = {
     enable = true;
-    initExtra = ''export PS1="┌──[\w]\$(__git_ps1 \" \[\e[1m\]%s\[\e[0m\]\")\n└─\[\e[1m\]λ\[\e[0m\] "'';
+    initExtra = ''export PS1="┌──[\w] \[\e[1m\]\$(git branch --show-current 2> /dev/null)\[\e[0m\]\n└─\[\e[1m\]λ\[\e[0m\] "'';
     historyControl = ["erasedups"];
     bashrcExtra = ''
       export EDITOR="nvim";

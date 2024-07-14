@@ -21,13 +21,13 @@
     , cornelis
     , nixgl
     , ... 
-    } : {
+    }@inputs : {
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       herring = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = { inherit nixpkgs home-manager cornelis; };
+        specialArgs = { inherit inputs; };
         modules = [ 
           ./configuration.nix 
           home-manager.nixosModules.home-manager

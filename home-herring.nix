@@ -3,7 +3,6 @@
 {
   imports = [
     ./nvim
-    ./alacritty 
     ./xmonad
   ];
 
@@ -53,6 +52,7 @@
 
       # Applications
       # fastfetch
+      kitty
       feh
       qpwgraph
       firefox
@@ -109,13 +109,19 @@
       identityFile = ["~/.ssh/id_ed25519"];
     };
   };
-  programs.bash.enable = true;
-  programs.bash.initExtra = ''
-    export EDITOR="nvim"
-    export BROWSER="firefox"
-    export TERMINAL="alacritty"
-    export PATH=$PATH:/home/fm/.local/bin:/home/fm/.cabal/bin
-  '';
+
+  programs.bash = {
+    enable = true;
+    initExtra = ''export PS1="┌──[\w] \[\e[1m\]\$(git branch --show-current 2> /dev/null)\[\e[0m\]\n└─\[\e[1m\]λ\[\e[0m\] "'';
+    historyControl = ["erasedups"];
+    bashrcExtra = ''
+      export EDITOR="nvim";
+      export TERMINAL="kitty";
+      export BROWSER="firefox"
+      export PATH=$PATH:/home/fm/.local/bin:/home/fm/.cabal/bin
+    '';
+  };
+
 
   services.picom.enable = true;
   services.picom.shadow = true;
