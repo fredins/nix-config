@@ -39,16 +39,6 @@
   programs.command-not-found.enable = true;
   programs.home-manager.enable = true;
 
-  programs.bash = {
-    enable = true;
-    initExtra = ''export PS1="┌──[\w] \[\e[1m\]\$(git branch --show-current 2> /dev/null)\[\e[0m\]\n└─\[\e[1m\]λ\[\e[0m\] "'';
-    historyControl = ["erasedups"];
-    bashrcExtra = ''
-      export EDITOR="nvim";
-      export TERMINAL="kitty";
-    '';
-  };
-
   manual.html.enable = true;
 
   # Nicely reload system units when changing configs
