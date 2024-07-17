@@ -185,11 +185,15 @@ smartInsert = XMonad.willFloat >>= \float ->
 manageHook :: Query (Endo WindowSet)
 manageHook = XMonad.composeAll
  [ smartInsert
+ , Place.placeHook $ Place.smart (1/2, 1/2)
  , ManageHelpers.isDialog --> XMonad.doFloat
+ , XMonad.className =? "Vulkan" --> XMonad.doFloat
  , XMonad.className =? "Com.cisco.secureclient.gui" --> XMonad.doShift "9"
  , XMonad.className =? "Slack" --> XMonad.doShift "9"
- , Place.placeHook $ Place.smart (1/2, 1/2)
  ]
+
+handleEventHook :: Event -> X All
+handleEventHook = LayoutHints.hintsEventHook
 
 type Layout = Choose ResizableTall (Choose (Mirror ResizableTall) Full)
 
@@ -198,13 +202,15 @@ layout = tiled ||| Mirror tiled ||| Full
   where
   tiled = ResizableTall 1 (3/100) (1/2) []
 
-type LayoutModifier = ModifiedLayout ManageDocks.AvoidStruts
+type LayoutModifier a = 
+  ModifiedLayout LayoutHints.LayoutHintsToCenter 
+    (ModifiedLayout ManageDocks.AvoidStruts a)
 
 layoutModifier ::
   XMonad.LayoutClass l a =>
   l a ->
   LayoutModifier l a
-layoutModifier = ManageDocks.avoidStruts
+layoutModifier = LayoutHints.layoutHintsToCenter . ManageDocks.avoidStruts
 
 config :: XConfig (LayoutModifier Layout)
 config = XMonad.def
@@ -217,6 +223,7 @@ config = XMonad.def
   , XMonad.focusedBorderColor = "#5E81AC"
   , XMonad.normalBorderColor  = "#000000" -- "#eeeeee"
   , XMonad.manageHook         = manageHook
+  , XMonad.handleEventHook    = handleEventHook
   }
 
 navigationConfig :: Navigation2D.Navigation2DConfig
