@@ -34,6 +34,7 @@
       haskellPackages.hoogle
       cmake
       ncdu
+      texlive.combined.scheme-full
     ];
   };
 

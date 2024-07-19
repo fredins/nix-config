@@ -18,6 +18,8 @@
       llvmPackages.libllvm
       llvmPackages.clangUseLLVM
       pyright
+      texlive.combined.scheme-full
+      texlab
     ];
     extraLuaConfig = '' 
       vim.g.mapleader     = " "
@@ -101,6 +103,19 @@
           require("lspconfig")["clangd"].setup {
             capabilities = capabilities,
             autostart = false
+          }
+
+          require("lspconfig")["texlab"].setup {
+            capabilities = capabilities,
+            autostart = false,
+            settings =  {
+              build = {
+                args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+                executable = "latexmk",
+                forwardSearchAfter = false,
+                onSave = false
+              }
+            } 
           }
 
         ''; 
