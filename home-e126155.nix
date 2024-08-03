@@ -33,6 +33,7 @@
       cabal-install
       cmake
       nixgl.nixGLIntel
+      texlive.combined.scheme-full
     ];
   };
 

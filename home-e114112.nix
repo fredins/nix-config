@@ -25,10 +25,8 @@
   home = { 
     username = "marfre03";
     homeDirectory = "/home/marfre03";
-
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "22.05";
-  
     packages = with pkgs; [ 
       ghc 
       haskellPackages.hoogle
