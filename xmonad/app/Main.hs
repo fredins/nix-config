@@ -202,8 +202,8 @@ layout = tiled ||| Mirror tiled ||| Full
   where
   tiled = ResizableTall 1 (3/100) (1/2) []
 
-type LayoutModifier a = 
-  ModifiedLayout LayoutHints.LayoutHintsToCenter 
+type LayoutModifier a =
+  ModifiedLayout LayoutHints.LayoutHintsToCenter
     (ModifiedLayout ManageDocks.AvoidStruts a)
 
 layoutModifier ::
@@ -224,6 +224,7 @@ config = XMonad.def
   , XMonad.normalBorderColor  = "#000000" -- "#eeeeee"
   , XMonad.manageHook         = manageHook
   , XMonad.handleEventHook    = handleEventHook
+  , XMonad.borderWidth        = 0
   }
 
 navigationConfig :: Navigation2D.Navigation2DConfig
