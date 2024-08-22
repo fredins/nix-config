@@ -44,6 +44,14 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
+      "fm@salmon" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          overlays = [ nixgl.overlay ];
+        };
+        extraSpecialArgs = { inherit nixpkgs; }; 
+        modules = [ ./home-salmon.nix ];
+      };
       "marfre03@e114112" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
