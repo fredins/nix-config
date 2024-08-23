@@ -32,7 +32,6 @@
       inotify-tools
       keepassxc
       nixgl.nixGLIntel
-      libsForQt5.oxygen-icons5
 
       # Haskell stuff
       ghc
@@ -44,9 +43,6 @@
       haskellPackages.BNFC
       haskellPackages.alex
       haskellPackages.happy
-
-      # Agda
-      cornelis
 
       # C++
       cmake
@@ -75,6 +71,7 @@
       export TERMINAL="kitty";
       export BROWSER="firefox"
       export PATH=$PATH:/home/fm/.local/bin:/home/fm/.cabal/bin
+      . /home/fm/.nix-profile/etc/profile.d/nix.sh
     '';
   };
   services.picom.enable = true;
