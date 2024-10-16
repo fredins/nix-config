@@ -46,6 +46,7 @@
 
       # C++
       cmake
+      clang
 
       # Latex
       texlive.combined.scheme-full

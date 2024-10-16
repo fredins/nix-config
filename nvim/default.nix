@@ -24,9 +24,9 @@
     extraLuaConfig = '' 
       vim.g.mapleader     = " "
       vim.opt.incsearch   = true
-      vim.opt.tabstop     = 4
-      vim.opt.softtabstop = 4
-      vim.opt.shiftwidth  = 4
+      vim.opt.tabstop     = 2
+      vim.opt.softtabstop = 2
+      vim.opt.shiftwidth  = 2
       vim.opt.expandtab   = true
       vim.opt.backup      = false
       vim.opt.scrolloff   = 10
@@ -140,7 +140,7 @@
 
           local opts = { noremap=true, silent=true }
           vim.cmd([[
-            au BufRead,BufNewFile *.agda call AgdaFiletype()
+            au BufRead,BufNewFile *.agda,*.lagda.* call AgdaFiletype()
             au QuitPre *.agda :CornelisCloseInfoWindows
             function! AgdaFiletype()
               nnoremap <buffer> <leader>l :CornelisLoad<CR>
@@ -156,8 +156,9 @@
               nnoremap <buffer> <C-A>     :CornelisInc<CR>
               nnoremap <buffer> <C-X>     :CornelisDec<CR>
               nnoremap <buffer> <leader>n :CornelisNormalize<CR>
+              nnoremap <buffer> <leader>q :CornelisQuestionToMeta<CR>
             endfunction
-            au BufWritePost *.agda execute "normal! :CornelisLoad\<CR>"
+            au BufWritePost *.agda,*.lagda.* execute "normal! :CornelisLoad\<CR>"
           ]])
 
         '';
@@ -224,7 +225,7 @@
           vim.g.haskell_ident_disable           = 1
         '';
       }
-      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl ]))
+      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl typst xml]))
       vim-smoothie
     ];
   };
