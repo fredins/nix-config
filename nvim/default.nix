@@ -149,6 +149,7 @@
               nnoremap <buffer> <leader>m :CornelisMakeCase<CR>
               nnoremap <buffer> <leader>, :CornelisTypeContext<CR>
               nnoremap <buffer> <leader>. :CornelisTypeContextInfer<CR>
+              nnoremap <buffer> <leader>i :CornelisInfer<CR>
               nnoremap <buffer> <leader>n :CornelisSolve<CR>
               nnoremap <buffer> <leader>a :CornelisAuto<CR>
               nnoremap <buffer> gd        :CornelisGoToDefinition<CR>

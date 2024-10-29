@@ -94,7 +94,11 @@
     enable = true;
     userName = "fredins";
     userEmail = "fredin.martin@gmail.com";
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
+
 
   programs.ssh.enable = true;
   programs.ssh.matchBlocks = {
