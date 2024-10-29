@@ -90,6 +90,7 @@
 
 
           vim.keymap.set("n", "<C-y>", vim.diagnostic.open_float)
+          vim.keymap.set("n", "K", vim.lsp.buf.hover)
 
           local capabilities = require("cmp_nvim_lsp").default_capabilities()
           require("lspconfig")["hls"].setup {
@@ -227,6 +228,7 @@
       }
       (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl typst xml]))
       vim-smoothie
+      typst-vim
     ];
   };
 }
