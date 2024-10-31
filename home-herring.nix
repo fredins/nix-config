@@ -49,6 +49,7 @@
       gnumake
       graphviz
       inotify-tools
+      unzip
 
       # Applications
       # fastfetch
@@ -76,7 +77,7 @@
       haskellPackages.cabal-install
       haskellPackages.stylish-haskell
       haskellPackages.hoogle
-      # (agda.withPackages [ agdaPackages.standard-library ])
+      (agda.withPackages [ agdaPackages.standard-library ])
 
       # Other
       ltex-ls

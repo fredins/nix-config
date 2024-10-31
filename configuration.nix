@@ -57,6 +57,8 @@
   # Packages
   environment.systemPackages = with pkgs; [];
 
+  services.libinput.touchpad.disableWhileTyping = true;
+
   services.xserver = {
     enable = true;
     videoDrivers = [ "modesetting" ];
