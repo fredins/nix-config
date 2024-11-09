@@ -13,10 +13,10 @@
       (agda.withPackages [ agdaPackages.standard-library ])
       cornelis 
       haskellPackages.haskell-language-server
-      clang-tools
+      # clang-tools
       # llvmPackages_15.libstdcxxClang
       llvmPackages.libllvm
-      llvmPackages.clangUseLLVM
+      # llvmPackages.clangUseLLVM
       pyright
       texlive.combined.scheme-full
       texlab

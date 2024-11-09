@@ -29,6 +29,7 @@
     stateVersion = "22.05";
     packages = with pkgs; [ 
       lmodern
+      julia-mono
       inotify-tools
       keepassxc
       nixgl.nixGLIntel
@@ -44,14 +45,9 @@
       haskellPackages.alex
       haskellPackages.happy
 
-      # C++
-      cmake
-      clang
-
       # Latex
       texlive.combined.scheme-full
       ltex-ls
-
     ];
   };
 
