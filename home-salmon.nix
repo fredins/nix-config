@@ -35,9 +35,7 @@
       nixgl.nixGLIntel
 
       # Haskell stuff
-      ghc
       hlint
-      haskellPackages.cabal-install
       haskellPackages.stylish-haskell
       haskellPackages.hoogle
       haskellPackages.threadscope
@@ -57,6 +55,9 @@
     enable = true;
     userName = "fredins";
     userEmail = "fredin.martin@gmail.com";
+    extraConfig = {
+      pull.rebase = true;
+    };
   };
   programs.ssh.enable = true;
   programs.bash = {
@@ -67,7 +68,7 @@
       export EDITOR="nvim";
       export TERMINAL="kitty";
       export BROWSER="firefox"
-      export PATH=$PATH:/home/fm/.local/bin:/home/fm/.cabal/bin
+      export PATH=$PATH:/home/fm/.ghcup/bin:/home/fm/.local/bin:/home/fm/.cabal/bin
       . /home/fm/.nix-profile/etc/profile.d/nix.sh
     '';
   };
