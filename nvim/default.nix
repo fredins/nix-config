@@ -12,6 +12,7 @@
       fd
       (agda.withPackages [ agdaPackages.standard-library ])
       cornelis 
+      ghc
       haskellPackages.haskell-language-server
       # clang-tools
       # llvmPackages_15.libstdcxxClang
@@ -34,9 +35,10 @@
       vim.opt.undofile    = true
       vim.opt.signcolumn  = 'yes'
       vim.opt.updatetime  = 250
-      -- vim.opt.colorcolumn = '100'
       vim.opt.wrap        = false
+      vim.opt.signcolumn  = 'no'
     '';
+    # vim.opt.colorcolumn = '100'
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       cmp-nvim-lsp
