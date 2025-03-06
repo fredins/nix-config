@@ -29,19 +29,19 @@
     stateVersion = "22.05";
     packages = with pkgs; [ 
       lmodern
-      julia-mono
+      # julia-mono
       inotify-tools
       keepassxc
-      nixgl.nixGLIntel
+      # nixgl.nixGLIntel
 
       # Haskell stuff
-      hlint
-      haskellPackages.stylish-haskell
-      haskellPackages.hoogle
-      haskellPackages.threadscope
-      haskellPackages.BNFC
-      haskellPackages.alex
-      haskellPackages.happy
+      # hlint
+      # haskellPackages.stylish-haskell
+      # haskellPackages.hoogle
+      # haskellPackages.threadscope
+      # haskellPackages.BNFC
+      # haskellPackages.alex
+      # haskellPackages.happy
 
       # Latex
       texlive.combined.scheme-full

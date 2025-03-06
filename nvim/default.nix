@@ -12,8 +12,8 @@
       fd
       (agda.withPackages [ agdaPackages.standard-library ])
       cornelis 
-      ghc
-      haskellPackages.haskell-language-server
+      # ghc
+      # haskellPackages.haskell-language-server
       # clang-tools
       # llvmPackages_15.libstdcxxClang
       llvmPackages.libllvm
