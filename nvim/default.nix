@@ -37,8 +37,8 @@
       vim.opt.updatetime  = 250
       vim.opt.wrap        = false
       vim.opt.signcolumn  = 'no'
+      vim.opt.colorcolumn = '120'
     '';
-    # vim.opt.colorcolumn = '100'
     plugins = with pkgs.vimPlugins; [
       nvim-lspconfig
       cmp-nvim-lsp
@@ -104,6 +104,11 @@
           }
 
           require("lspconfig")["clangd"].setup {
+            capabilities = capabilities,
+            autostart = false
+          }
+
+          require("lspconfig")["elp"].setup {
             capabilities = capabilities,
             autostart = false
           }
@@ -229,7 +234,7 @@
           vim.g.haskell_ident_disable           = 1
         '';
       }
-      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl typst xml]))
+      (nvim-treesitter.withPlugins (p: with p; [ python lua c cpp glsl typst xml erlang ]))
       vim-smoothie
       typst-vim
     ];

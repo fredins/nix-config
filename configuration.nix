@@ -114,9 +114,14 @@
   formatted;
 
   time.timeZone = "Europe/Stockholm";
-  networking.hostName = "herring";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "herring";
+    networkmanager.enable = true;
+    firewall.enable = false;
+  };
+
   programs.nm-applet.enable = true;
+  
 
   i18n.defaultLocale = "en_US.utf8";
 

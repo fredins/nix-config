@@ -29,6 +29,7 @@
       # Python
       # (python3.withPackages (ps: with ps; [ numpy matplotlib pandas notebook scikit-learn]))
 
+      chromium
 
       # Fonts
       # lmodern
@@ -57,7 +58,7 @@
       feh
       qpwgraph
       firefox
-      okular
+      kdePackages.okular
       spotify
       # discord
       thunderbird
@@ -68,16 +69,25 @@
 
       # LLVM
       # (llvmPackages_15.libllvm.override{debugVersion = true;})
-      llvmPackages_15.clangUseLLVM
+      # llvmPackages_15.clangUseLLVM
       # lldb_15
       
       # Haskell and Agda
-      ghc
-      hlint
+      # ghc
+      # hlint
       haskellPackages.cabal-install
-      haskellPackages.stylish-haskell
+      # haskellPackages.stylish-haskell
       haskellPackages.hoogle
+      haskellPackages.haskell-language-server
       (agda.withPackages [ agdaPackages.standard-library ])
+
+      erlang
+      erlang-language-platform
+        
+      # haskellPackages.BNFC
+      # haskellPackages.alex
+      # haskellPackages.happy
+      python3
 
       # Other
       ltex-ls
@@ -86,7 +96,11 @@
   };
 
 
-  # xsession.windowManager.xmonad.enable = true;
+  xdg = {
+    mimeApps.defaultApplications = {
+      "application/pdf" = [ "okular.desktop" ];
+    };
+  };
 
 
   programs.command-not-found.enable = true;
@@ -127,6 +141,10 @@
     '';
   };
 
+  services.kdeconnect = {
+    enable = true;
+    indicator = false;
+  };
 
   services.picom.enable = true;
   services.picom.shadow = true;
