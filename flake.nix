@@ -54,21 +54,21 @@
         extraSpecialArgs = { inherit nixpkgs; }; 
         modules = [ ./home-salmon.nix ];
       };
-      "marfre03@e114112" = home-manager.lib.homeManagerConfiguration {
+      "marfre03@e140379" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           overlays = [ nixgl.overlay ];
         };
         extraSpecialArgs = { inherit nixpkgs; }; 
-        modules = [ ./home-e114112.nix ];
+        modules = [ ./home-work.nix ];
       };
-      "marfre03@e126155" = home-manager.lib.homeManagerConfiguration {
+      "marfre03@e141217" = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
           overlays = [ nixgl.overlay ];
         };
         extraSpecialArgs = { inherit nixpkgs; }; 
-        modules = [ ./home-e126155.nix ];
+        modules = [ ./home-work.nix ];
       };
     };
   };
