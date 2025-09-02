@@ -44,7 +44,6 @@
   programs.ssh.matchBlocks.machine = { 
     host = "machine";
     hostname = "10.44.11.180";
-
   };
 
   services.picom.enable = true;
